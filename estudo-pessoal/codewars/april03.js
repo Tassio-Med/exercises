@@ -1,4 +1,6 @@
 /* 
+The Supermarket Queue
+
 There is a queue for the self-checkout tills at the supermarket. Your task is write a function to calculate the total time required for all the customers to check out!
 
 input
@@ -39,3 +41,19 @@ function queueTime(customers, n) {
 
   return Math.max(...arr);
 }
+
+//OUTRAS SOLUÇÕES
+
+//1
+function queueTime(customers, n) {
+  let tills = Array(n).fill(0);
+  
+  customers.forEach((customer) => {
+    let nextTill = tills.indexOf(Math.min(...tills))
+    tills[nextTill] += customer;
+  });
+
+  return Math.max(...tills);
+}
+
+
