@@ -61,7 +61,7 @@ function duplicateCount(text){
   return count;
 }
 
-//2
+//3
 
 function duplicateCount(text) {
   var dup = [];
