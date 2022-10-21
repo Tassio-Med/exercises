@@ -1,5 +1,3 @@
-// src/migrations/[timestamp]-create-employee.js
-
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     return queryInterface.createTable('employees', {
