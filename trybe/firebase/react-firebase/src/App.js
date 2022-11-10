@@ -2,22 +2,48 @@ import { useState } from 'react'
 import './app.css'
 
 import { db } from './firebaseConnection';
-import { doc, setDoc } from 'firebase/firestore';
+import { doc, /*setDoc,*/ collection, addDoc, getDoc } from 'firebase/firestore';
 
 function App() {
   const [título, setTítulo] = useState('');
   const [autor, setAutor] = useState('');
 
   async function handleAdd(){
-    await setDoc(doc(db, "posts", "12345"), {
+    // await setDoc(doc(db, "posts", "12345"), {
+    //   titulo: título,
+    //   autor: autor,
+    // })
+    // .then(() => {
+    //   console.log("DADOS REGISTRADOS NO BANCO!")
+    // })
+    // .catch((error) => {
+    //   console.log("GEROU ERRO" + error)
+    // })
+    await addDoc(collection(db, "posts"), {
       titulo: título,
       autor: autor,
     })
     .then(() => {
       console.log("DADOS REGISTRADOS NO BANCO!")
+      setAutor('');
+      setTítulo('');
     })
     .catch((error) => {
       console.log("GEROU ERRO" + error)
+    })
+  }
+
+  async function buscarPost(){
+
+    const postRef = doc(db, "posts", "1234")
+
+    await getDoc(postRef)
+    .then((snapshot) => {
+      setAutor(snapshot.data().autor)
+      setTítulo(snapshot.data().título)
+    })
+    .catch(() => {
+      console.log("ERRO AO BUSCAR")
     })
   }
 
@@ -42,6 +68,7 @@ function App() {
         />
 
         <button onClick={handleAdd}>Cadastrar</button>
+        <button onClick={buscarPost}>Buscar Post</button>
       </div>
 
     </div>
