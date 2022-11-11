@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import { db } from './firebaseConnection';
-import { doc, setDoc, collection, addDoc, getDoc, getDocs } from 'firebase/firestore'
+import { doc, setDoc, collection, addDoc, getDoc, getDocs, updateDoc } from 'firebase/firestore'
 
 import './app.css';
 
 function App() {
   const [titulo, setTitulo] = useState('');
   const [autor, setAutor] = useState('');
+  const [idPost, setIdPost] = useState('');
 
   const [posts, setPosts] = useState([]);
 
@@ -72,7 +73,23 @@ function App() {
     .catch((error) => {
       console.log("DEU ALGUM ERRO AO BUSCAR")
     })
+  }
 
+  async function editarPost() {
+    const docRef = doc(db,"posts", idPost)
+    await updateDoc(docRef, {
+      titulo: titulo,
+      autor: autor,
+    })
+    .then(() => {
+      console.log("POST ATUALIZADO!")
+      setIdPost('')
+      setTitulo('')
+      setAutor('')
+    })
+    .catch((error) => {
+      console.log(error)
+    })
 
   }
 
@@ -81,6 +98,14 @@ function App() {
       <h1>ReactJS + Firebase :)</h1>
 
     <div className="container">
+
+      <label htmlFor="">ID do Post</label>
+      <input
+        placeholder='Digite o ID do post'
+        value={idPost}
+        onChange={ (e) => setIdPost(e.target.value) }
+      /> <br />
+
       <label>Titulo:</label>
       <textarea 
         type="text"
@@ -98,14 +123,17 @@ function App() {
       />
 
       <button onClick={handleAdd}>Cadastrar</button>
-      <button onClick={buscarPost}>Buscar post</button>
+      <button onClick={buscarPost}>Buscar post</button><br />
+      <button onClick={editarPost}>Atualizar post</button>
 
       <ul>
         {posts.map( (post) => {
           return(
             <li key={post.id}>
+              <strong>ID: {post.id}</strong> <br />
               <span>Titulo: {post.titulo} </span> <br/>
-              <span>Autor: {post.autor}</span> <br/>  <br/>
+              <span>Autor: {post.autor}</span> <br/> 
+              <button onClick={ () => excluirPost() }>Excluir</button><br/>
             </li>
           )
         })}
