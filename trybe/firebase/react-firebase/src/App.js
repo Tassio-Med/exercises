@@ -1,16 +1,22 @@
 import { useState, useEffect } from 'react'
-import { db } from './firebaseConnection';
+import { db, auth } from './firebaseConnection';
 import {
   doc,
-  setDoc,
+  // setDoc,
   collection,
   addDoc,
-  getDoc,
+  // getDoc,
   getDocs,
   updateDoc,
   deleteDoc,
   onSnapshot,
 } from 'firebase/firestore'
+
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+} from 'firebase/auth'
 
 import './app.css';
 
@@ -18,8 +24,13 @@ function App() {
   const [titulo, setTitulo] = useState('');
   const [autor, setAutor] = useState('');
   const [idPost, setIdPost] = useState('');
+  const [email, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
 
   const [posts, setPosts] = useState([]);
+
+  const [user, setUser] = useState(false);
+  const [userDetail, setUserDetail] = useState({});
 
   useEffect(()=> {
     async function loadPosts(){
@@ -133,14 +144,89 @@ function App() {
     .catch((error) => {
       console.log(error)
     })
-    
+  }
+
+  async function novoUsuario(){
+    await createUserWithEmailAndPassword(auth, email, senha)
+    .then(() => {
+      console.log("CADASTRADO COM SUCESSO!")
+      setEmail('')
+      setSenha('')
+    })
+    .catch((error) => {
+      if(error.code === 'auth/weak-password'){
+        alert("Senha muito fraca.")
+      } else if(error.code === 'auth/email-already-in-use') {
+        alert("Email já existe!")
+      }
+    })
+  }
+
+  async function logarUsuario(){
+    await signInWithEmailAndPassword(auth, email, senha)
+    .then((value) => {
+      console.log("USUÁRIO LOGADO COM SUCESSO!")
+
+      setUserDetail({
+        uid: value.user.uid,
+        email: value.user.email,
+      })
+      setUser(true);
+
+      setEmail('')
+      setSenha('')
+
+    })
+    .catch(() => {
+      console.log("ERRO AO FAZER LOGIN")
+    })
+  }
+
+  async function fazerLogout(){
+    await signOut(auth)
+    setUser(false);
+    setUserDetail({});
   }
 
   return (
     <div>
       <h1>ReactJS + Firebase :)</h1>
 
+      {user && (
+        <div>
+          <strong>Seja bem-vindo(a)! Você está logado!</strong> <br />
+          <span>ID: {userDetail.uid} - Email: {userDetail.email}</span><br />
+          <button onClick={fazerLogout}>Logout</button>
+          <br /> <br />
+        </div>
+      )}
+
+      <div className='container'>
+        <h2>Usuários</h2>
+        <label>Email</label>
+        <input
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Digite seu email"
+        />
+        <br />
+        <label>Senha</label>
+        <input
+          value={senha}
+          onChange={(e) => setSenha(e.target.value)}
+          placeholder="Digite sua senha"
+        />
+        <br />
+
+        <button onClick={novoUsuario}>Cadastrar</button><br />
+        <button onClick={logarUsuario}>Fazer login</button>
+
+      </div>
+      <br /><br />
+      <hr />
+
     <div className="container">
+      <h2>POSTS</h2>
 
       <label htmlFor="">ID do Post</label>
       <input
