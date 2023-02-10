@@ -1,0 +1,17 @@
+@import "./variaveis.scss";
+
+.btn {
+  width: 200px;
+  padding: 10px;
+  background: none;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  // color: white;
+  
+}
+
+.btn-laranja {
+  @extend .btn;
+  background: $color-bg;
+  }
