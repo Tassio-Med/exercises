@@ -31,3 +31,4 @@ console.log(arrowFunction(45, 17));
 const arrowFunctionCurta = (a, b) => a + b;
 
 console.log(arrowFunctionCurta(45, 17));
+
