@@ -1,5 +1,6 @@
 // 2 - Contar a quantidade de personagens através do sexo
 
+
 const database = require('./database');
 
 function countGender(gender) {
