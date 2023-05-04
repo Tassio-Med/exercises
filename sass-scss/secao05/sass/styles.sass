@@ -1,0 +1,30 @@
+@import 'variables'
+@import 'button'
+@import 'mixins'
+
+body
+  margin: 20px
+  display: flex
+  justify-content: center
+  background-color: #5d5b5b
+
+.p-esp
+  @include special
+  @include shadow-box
+
+.container
+  @include special
+  @include shadow-box
+
+.menor
+  @include espacamento(5px, 10px)
+  border: 2px blue solid
+
+.medio
+  @include espacamento(20px, 30px)
+  border: 2px blue solid
+
+.grande
+  @include espacamento(40px, 50px)
+  border: 2px blue solid
+  
