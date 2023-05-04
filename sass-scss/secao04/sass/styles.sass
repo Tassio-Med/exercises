@@ -1,0 +1,33 @@
+@import 'variables'
+
+body
+  display: flex
+  justify-content: center
+  align-items: center
+  text-align: center
+  
+div
+  background-color: $container-pai
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+  color: $first-color
+  width: 50%
+  height: 60vh
+  border-radius: 30px
+  text-align: center
+  display: flex
+  flex-direction: column
+  align-items: center
+
+  p
+    font-size: $font-div
+ 
+  
+  .container
+    color: $second-color
+    width: 70%
+    height: 40%
+    background-color: $container-filho
+    padding: 10px
+
+    p
+      font-size: #{$font-div + $font-div2}
