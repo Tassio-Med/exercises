@@ -8,6 +8,13 @@
   box-shadow: 0px 0px 19px 1px rgba(0, 0, 0, 0.54);
 }
 
+.medio {
+  background-color: green;
+  font-size: 5rem;
+  line-height: 1.5rem;
+  text-transform: uppercase;
+}
+
 body {
   margin: 20px;
   display: flex;
@@ -61,6 +68,44 @@ body {
   padding: 40px;
   margin: 50px;
   border: 2px blue solid;
+}
+
+.box1 {
+  font-size: 45px;
+  color: red;
+}
+
+.title-40px {
+  font-size: 40px;
+  line-height: 48px;
+}
+
+.title-60px {
+  font-size: 60px;
+  line-height: 72px;
+}
+
+.title-100px {
+  font-size: 100px;
+  line-height: 120px;
+}
+
+.p-1 {
+  color: lightblue;
+  background-color: #000;
+  font-size: 2rem;
+}
+
+.p-2 {
+  color: lightgreen;
+  background-color: #000;
+  font-size: 2rem;
+}
+
+.p-3 {
+  color: teal;
+  background-color: #000;
+  font-size: 2rem;
 }
 
 /*# sourceMappingURL=styles.css.map */
