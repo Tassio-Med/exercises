@@ -1,6 +1,7 @@
 @use 'sass:color'
 @use 'sass:list'
 @use 'sass:map'
+@use 'sass:math'
 
 $color-adjust: color.adjust(#6b717f, $red: 25)
 $color-adjust-2: color.adjust(#6b717f, $red: 25, $blue: 110)
@@ -88,3 +89,17 @@ h1
 @if map.has-key($x, 'transition')
   h1
     transition: map.get($x, 'transition')
+
+$pi: math.$pi
+@debug $pi
+@debug math.floor($pi)
+
+$z: 3.1
+@debug math.ceil($z) //Arredonda pra cima
+@debug math.floor($z) //Arredonda pra baixo
+
+$a: 1, 2, 3, 4, 5
+@debug math.max($a...) //Retorna o maior número da lista
+@debug math.min($a...) //Retorna o menor número da lista
+
+@debug math.floor(math.random() * 10) //Retorna um número aleatório de 1 a 10
