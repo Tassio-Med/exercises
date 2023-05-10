@@ -1,4 +1,5 @@
 @use 'sass:color'
+@use 'sass:list'
 
 $color-adjust: color.adjust(#6b717f, $red: 25)
 $color-adjust-2: color.adjust(#6b717f, $red: 25, $blue: 110)
@@ -31,3 +32,36 @@ $color-scale-2: color.scale($color-adjust-2, $lightness: 40% )
   
   &:hover
     background-color: lighten(#4f1f44, 60% )
+
+$lista: 10px 20px 40px
+
+@debug $lista
+
+$lista: list.append($lista, 40px)
+
+@debug $lista
+
+@debug list.index($lista, 10px)
+@debug list.index($lista, 50px)
+
+@if list.index($lista, 20px) == 2
+  $lista: list.append($lista, 50px)
+@debug $lista
+
+$lista2: 60px, 70px, 80px, 90px, 100px
+
+$lista3: list.join($lista, $lista2)
+
+@debug $lista3
+@debug list.length($lista)
+@debug list.length($lista2)
+@debug list.length($lista3)
+
+@debug list.nth($lista, 3)
+@debug list.nth($lista2, 2)
+
+$font-size-title: list.nth($lista2, 1)
+@debug $font-size-title
+
+h1
+  font-size: $font-size-title
