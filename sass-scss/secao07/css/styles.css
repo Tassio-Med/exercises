@@ -35,4 +35,12 @@ h1 {
   font-size: 60px;
 }
 
+h1 {
+  border: 2px solid red;
+}
+
+h1 {
+  transition: 1s;
+}
+
 /*# sourceMappingURL=styles.css.map */

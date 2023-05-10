@@ -1,5 +1,6 @@
 @use 'sass:color'
 @use 'sass:list'
+@use 'sass:map'
 
 $color-adjust: color.adjust(#6b717f, $red: 25)
 $color-adjust-2: color.adjust(#6b717f, $red: 25, $blue: 110)
@@ -65,3 +66,25 @@ $font-size-title: list.nth($lista2, 1)
 
 h1
   font-size: $font-size-title
+
+$m: ('font': 3px, 'color': blue, 'bold': false)
+$n: ('border': 2px solid red, 'transition': 1s)
+
+@debug $m
+@debug $n
+
+$x: map.merge($m, $n)
+@debug $x
+
+$border-title: map.get($x, 'border')
+
+h1
+  border: $border-title
+@debug $border-title
+
+@debug map.has-key($x, 'transition')
+@debug map.has-key($x, 'teste')
+
+@if map.has-key($x, 'transition')
+  h1
+    transition: map.get($x, 'transition')
