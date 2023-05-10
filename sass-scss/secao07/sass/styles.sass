@@ -3,6 +3,7 @@
 @use 'sass:map'
 @use 'sass:math'
 @use 'sass:meta'
+@use 'sass:string'
 
 $color-adjust: color.adjust(#6b717f, $red: 25)
 $color-adjust-2: color.adjust(#6b717f, $red: 25, $blue: 110)
@@ -123,3 +124,13 @@ $a: 1, 2, 3, 4, 5
 @debug meta.type-of(('asd': 1)) // Verifica o tipo
 @debug meta.type-of($a) // Verifica o tipo
 @debug meta.type-of(#fff) // Verifica o tipo
+
+
+$frase: 'O rato roeu a roupa do rei de roma'
+@debug string.index($frase, 'do') //Index da primeira letra da palavra buscada
+@debug string.length($frase) // Tamanho da string
+
+@debug string.to-lower-case($frase) // Converte para minúsculo
+@debug string.to-upper-case($frase) // Converte para maiúsculo
+
+@debug string.unique-id() // Gera um id único
