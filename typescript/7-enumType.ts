@@ -33,26 +33,26 @@ console.log('');
 
 // Como podemos acessar um valor de um Enum com uma chave: (usando o const)
 
-const enum Day {
-  Segunda = 'SEG',
-  Terça = 'TER',
-  Quarta = 'QUA',
-  Quinta = 'QUI',
-  Sexta = 'SEX',
-  Sabado = 'SAB',
-  Domingo = 'DOM',
-}
+// const enum Day {
+//   Segunda = 'SEG',
+//   Terça = 'TER',
+//   Quarta = 'QUA',
+//   Quinta = 'QUI',
+//   Sexta = 'SEX',
+//   Sabado = 'SAB',
+//   Domingo = 'DOM',
+// }
 
-function semana(c: Day) {
-  return 'Dias da semana legais!';
-}
+// function semana(c: Day) {
+//   return 'Dias da semana legais!';
+// }
 
-console.log(semana(Day.Sabado));
-console.log(semana(Day.Sexta));
+// console.log(semana(Day.Sabado));
+// console.log(semana(Day.Sexta));
 
-console.log('');
-console.log('///////////////////////////////////////////////');
-console.log('');
+// console.log('');
+// console.log('///////////////////////////////////////////////');
+// console.log('');
 
 // Quando usar enum?!
 
