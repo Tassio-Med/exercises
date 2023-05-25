@@ -18,7 +18,7 @@ export default {
   mounted(){
     setTimeout(() => {
       this.nome = 'Tássio'
-    }, 4000);
+    }, 2000);
   }
 }
 </script>
