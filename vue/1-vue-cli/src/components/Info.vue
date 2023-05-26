@@ -13,7 +13,7 @@
       <button @click='showEmail'>{{textoBotao}}</button>
     </div>
     <p v-show='mostrar_email'>Mande uma mensagem para: {{ email }}</p>
-    <p>para acessar meu portfólio <a v-bind:href="meu_link" target="_blank">basta clicar aqui</a></p>
+    <p class="teste">para acessar meu portfólio <a v-bind:href="meu_link" target="_blank">basta clicar aqui</a></p>
     <Picture />
   </div>
 </template>
@@ -49,3 +49,9 @@ export default {
   }
 }
 </script>
+
+<style>
+ .paragrafo-pai {
+  color: red;
+ }
+</style>
