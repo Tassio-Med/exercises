@@ -9,6 +9,9 @@
       <li>Python</li>
       <li>Typescript</li>
     </ul>
+    <div>
+      <button @click='showEmail'>{{textoBotao}}</button>
+    </div>
     <p v-show='mostrar_email'>Mande uma mensagem para: {{ email }}</p>
     <p>para acessar meu portfólio <a v-bind:href="meu_link" target="_blank">basta clicar aqui</a></p>
     <Picture />
@@ -28,8 +31,20 @@ export default {
     return {
       esta_trabalhando: true,
       email: 'tassiohm@gmail.com',
-      mostrar_email: true,
-      meu_link: 'https://google.com'
+      mostrar_email: false,
+      meu_link: 'https://google.com',
+      textoBotao: 'Mostrar e-mail'
+    }
+  },
+  methods: {
+    showEmail(){
+      console.log('Testando meu método')
+      this.mostrar_email = !this.mostrar_email
+      if(!this.mostrar_email) {
+        this.textoBotao = 'Mostrar e-mail'
+      } else {
+        this.textoBotao = 'Esconder e-mail'
+      }
     }
   }
 }
