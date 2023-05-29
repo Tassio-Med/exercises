@@ -1,7 +1,7 @@
 <template>
   <div>
-    <Header />
-   <PrimeiroComponente />
+    <Header :esta_logado="true"/>
+    <PrimeiroComponente />
     <h2 class="paragrafo-pai">Agora eu estou testando os {{ dados }} em componentes.</h2>
     <LifeCycle />
     <Pessoa />

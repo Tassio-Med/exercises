@@ -1,5 +1,6 @@
 <template>
   <div>
+    <p>{{compEmail}} - {{email}}</p>
     <h3 v-if="esta_trabalhando">Estou trabalhando momento</h3>
     <h3 v-else>Estou em busca de novas oportunidades!</h3>
     <p>Utilizo as seguintes tecnologias para back-end:</p>
@@ -30,10 +31,12 @@ export default {
   components: {
     Picture
   },
+  props: {
+    email: String,
+    esta_trabalhando: Boolean,
+  },
   data() {
     return {
-      esta_trabalhando: true,
-      email: 'tassiohm@gmail.com',
       mostrar_email: false,
       meu_link: 'https://google.com',
       textoBotao: 'Mostrar e-mail',

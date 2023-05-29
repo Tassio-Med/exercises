@@ -3,12 +3,14 @@
     <li>Home</li>
     <li>Projetos</li>
     <li>Contato</li>
+    <li v-if="esta_logado"><a href="#">Meu perfil</a></li>
   </ul>
 </template>
 
 <script>
 export default {
-  name: 'Header'
+  name: 'Header',
+  props: ["esta_logado"]
 }
 </script>
 
