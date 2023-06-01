@@ -147,15 +147,15 @@ console.log(filha);
 
 // Exemplo 08 --> Tipos de interações
 
-interface Cachorro {
-  tipo: string;
-}
+// interface Cachorro {
+//   tipo: string;
+// }
 
-interface Gato {
-  tipo: string;
-}
+// interface Gato {
+//   tipo: string;
+// }
 
-type Animais = Cachorro & Gato;
+// type Animais = Cachorro & Gato;
 
 // Exemplo 09 --> Generic Objects
 
