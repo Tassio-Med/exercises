@@ -31,7 +31,7 @@ class Estudante<T, E>{
   private id: T;
   private nome: E;
 
-  setValor(id: T, nome: E): void {
+  setValor(id: T, nome: E): void { 
     this.id = id;
     this.nome = nome;
   }
