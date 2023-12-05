@@ -3,10 +3,6 @@ const apiCredentials = require('./middlewares/apiCredentials');
 const validateCharacter = require('./middlewares/validateCharacter');
 
 const app = express();
-app.use(express.json());
-app.use(apiCredentials);
-
-app.get('/', (req, res) => res.status(201).json({ message: 'Olá mundo!' }));
 
 let nextId = 3;
 const characters = [
@@ -22,6 +18,7 @@ const characters = [
   },
 ];
 
+app.use(express.json());
 // Retornando a API para o usuário
 app.get('/characters', (req, res) => res.json(characters));
 
@@ -35,6 +32,7 @@ app.get('/characters/:id', (req, res) => {
   }
 });
 
+app.use(apiCredentials);
 // Adicionando elementos na API
 app.post('/characters', validateCharacter, (req, res) => {
   const newPersona = {id: nextId, ...req.body };
