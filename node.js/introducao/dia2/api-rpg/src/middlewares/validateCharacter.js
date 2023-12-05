@@ -1,5 +1,5 @@
 const validateCharacter = (req, res, next) => {
-  const requiredProperties = ['nome', 'sigla'];
+  const requiredProperties = ['name', 'raca'];
   if (requiredProperties.every((property) => property in req.body)) {
     next(); 
   } else {
