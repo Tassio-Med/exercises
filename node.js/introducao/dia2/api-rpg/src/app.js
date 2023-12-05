@@ -1,10 +1,14 @@
 const express = require('express');
+const apiCredentials = require('./middlewares/apiCredentials');
+const validateCharacter = require('./middlewares/validateCharacter');
 
 const app = express();
 app.use(express.json());
+app.use(apiCredentials);
 
-app.get('/', (req, res) => res.status(201).json({ message: 'olá mundo!' }));
+app.get('/', (req, res) => res.status(201).json({ message: 'Olá mundo!' }));
 
+let nextId = 3;
 const characters = [
   {
     id: 1,
@@ -19,33 +23,41 @@ const characters = [
 ];
 
 // Retornando a API para o usuário
-app.get('/characters', (req, res) => res.status(200).json({ characters }));
+app.get('/characters', (req, res) => res.json(characters));
+
+app.get('/characters/:id', (req, res) => {
+  const id = Number(req.params.id);
+  const persona = characters.find(p => p.id === id);
+  if (persona) {
+    res.json(persona);
+  } else {
+    res.sendStatus(404);
+  }
+});
 
 // Adicionando elementos na API
-app.post('/characters', (req, res) => {
-  const newPersona = {...req.body };
+app.post('/characters', validateCharacter, (req, res) => {
+  const newPersona = {id: nextId, ...req.body };
   characters.push(newPersona);
-
-
-  res.status(200).json({ persona: newPersona });
+  nextId += 1;
+  res.status(200).json({ newPersona });
 });
 
 // Editando elementos da API
 
-app.put('/characters/:id', (req, res) => {
-  const { id } = req.params;
-  const { name, raca } = req.body;
+app.put('/characters/:id', validateCharacter, (req, res) => {
+  const id = Number(req.params.id);
+  const updatePersona = characters.find((persona) => persona.id === id);
 
-  const updatePersona = characters.find((persona) => persona.id === Number(id));
-
-  if(!updatePersona){
+  if(updatePersona){
+    const index = characters.indexOf(updatePersona);
+    const updated = { id, ...req.body };
+    characters.splice(index, 1, updated);
+    res.status(201).json(updated);
+  }else{
     return res.status(404).json({message: 'Persona not found!' });
   }
 
-  updatePersona.name = name;
-  updatePersona.raca = raca;
-
-  res.status(200).json({ updatePersona });
 });
 
 //Deletando elementos da API
