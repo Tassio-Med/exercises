@@ -7,8 +7,9 @@ module.exports = async function apiCredentials(req, res, next){
   const authorized = JSON.parse(authdata);
 
   if(token in authorized) {
+    req.characters = authorized[token];
     next();
   } else {
-    res.sendStatus(401);
+    res.sendStatus(401).json({ message: 'Token inválido ou expirado.' });
   }
 };
