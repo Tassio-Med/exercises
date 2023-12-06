@@ -36,6 +36,13 @@ app.get('/characters/:id', (req, res) => {
 app.use(apiCredentials);
 // Adicionando elementos na API
 app.post('/characters', validateCharacter, (req, res) => {
+  if(
+    !req.characters.characters.includes(req.body.raca)
+    && characters.every((persona) => persona.raca !== req.body.raca)
+  ){
+    return res.status(422).json({ message: 'Já existe esta raça cadastrada' });
+  }
+
   const newPersona = {id: nextId, ...req.body };
   characters.push(newPersona);
   nextId += 1;
