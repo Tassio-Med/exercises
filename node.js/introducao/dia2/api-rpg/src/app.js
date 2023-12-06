@@ -21,7 +21,7 @@ const characters = [
 
 app.use(express.json());
 // Retornando a API para o usuário
-app.get('/characters', (req, res) => res.json(characters));
+app.get('/characters', (_req, res) => res.json(characters));
 
 app.get('/characters/:id', (req, res) => {
   const id = Number(req.params.id);
