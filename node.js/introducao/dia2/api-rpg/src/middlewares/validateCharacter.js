@@ -1,10 +1,8 @@
 const validateCharacter = (req, res, next) => {
-  const requiredProperties = ['name', 'raca'];
-  if (requiredProperties.every((property) => property in req.body)) {
-    next(); 
-  } else {
-    res.sendStatus(400); 
-  }
+  const { name, raca } = req.body;
+  if(!name) return res.startus(400).json({ message: 'O campo "name" é obrigatório' });
+  if(!raca) return res.startus(400).json({ message: 'O campo "raca" é obrigatório' });
+  next();
 };
 
 module.exports = validateCharacter;
