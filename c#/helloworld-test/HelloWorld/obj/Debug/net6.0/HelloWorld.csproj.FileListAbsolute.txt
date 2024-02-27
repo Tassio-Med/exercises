@@ -1,0 +1,15 @@
+/home/tassio/Documentos/estudos/exercises/c#/HelloWorld/bin/Debug/net6.0/HelloWorld
+/home/tassio/Documentos/estudos/exercises/c#/HelloWorld/bin/Debug/net6.0/HelloWorld.deps.json
+/home/tassio/Documentos/estudos/exercises/c#/HelloWorld/bin/Debug/net6.0/HelloWorld.runtimeconfig.json
+/home/tassio/Documentos/estudos/exercises/c#/HelloWorld/bin/Debug/net6.0/HelloWorld.dll
+/home/tassio/Documentos/estudos/exercises/c#/HelloWorld/bin/Debug/net6.0/ref/HelloWorld.dll
+/home/tassio/Documentos/estudos/exercises/c#/HelloWorld/bin/Debug/net6.0/HelloWorld.pdb
+/home/tassio/Documentos/estudos/exercises/c#/HelloWorld/obj/Debug/net6.0/HelloWorld.csproj.AssemblyReference.cache
+/home/tassio/Documentos/estudos/exercises/c#/HelloWorld/obj/Debug/net6.0/HelloWorld.GeneratedMSBuildEditorConfig.editorconfig
+/home/tassio/Documentos/estudos/exercises/c#/HelloWorld/obj/Debug/net6.0/HelloWorld.AssemblyInfoInputs.cache
+/home/tassio/Documentos/estudos/exercises/c#/HelloWorld/obj/Debug/net6.0/HelloWorld.AssemblyInfo.cs
+/home/tassio/Documentos/estudos/exercises/c#/HelloWorld/obj/Debug/net6.0/HelloWorld.csproj.CoreCompileInputs.cache
+/home/tassio/Documentos/estudos/exercises/c#/HelloWorld/obj/Debug/net6.0/HelloWorld.dll
+/home/tassio/Documentos/estudos/exercises/c#/HelloWorld/obj/Debug/net6.0/ref/HelloWorld.dll
+/home/tassio/Documentos/estudos/exercises/c#/HelloWorld/obj/Debug/net6.0/HelloWorld.pdb
+/home/tassio/Documentos/estudos/exercises/c#/HelloWorld/obj/Debug/net6.0/HelloWorld.genruntimeconfig.cache
