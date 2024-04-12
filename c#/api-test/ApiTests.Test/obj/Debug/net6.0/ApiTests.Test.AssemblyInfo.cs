@@ -10,14 +10,13 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("api-with-tests")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("ApiTests.Test")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("api-with-tests")]
-[assembly: System.Reflection.AssemblyTitleAttribute("api-with-tests")]
+[assembly: System.Reflection.AssemblyProductAttribute("ApiTests.Test")]
+[assembly: System.Reflection.AssemblyTitleAttribute("ApiTests.Test")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
-[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("ApiTests.Test.csproj")]
 
 // Gerado pela classe WriteCodeFragment do MSBuild.
 

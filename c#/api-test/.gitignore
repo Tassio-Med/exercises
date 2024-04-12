@@ -1,0 +1,7 @@
+# .NET Core
+*.csproj
+*.sln
+*.deps.json
+*.dll
+*.pdb
+*.obj

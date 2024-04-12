@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <InternalsVisibleTo Include="ApiTest.Test" />
+    <InternalsVisibleTo Include="ApiTests.Test" />
   </ItemGroup>
 
 </Project>

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/tassio/Documentos/estudos/exercises/c#/api-with-tests/api-with-tests.csproj": {}
+    "/home/tassio/Documentos/estudos/exercises/c#/api-test/api-with-tests/api-with-tests.csproj": {}
   },
   "projects": {
-    "/home/tassio/Documentos/estudos/exercises/c#/api-with-tests/api-with-tests.csproj": {
+    "/home/tassio/Documentos/estudos/exercises/c#/api-test/api-with-tests/api-with-tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/tassio/Documentos/estudos/exercises/c#/api-with-tests/api-with-tests.csproj",
+        "projectUniqueName": "/home/tassio/Documentos/estudos/exercises/c#/api-test/api-with-tests/api-with-tests.csproj",
         "projectName": "api-with-tests",
-        "projectPath": "/home/tassio/Documentos/estudos/exercises/c#/api-with-tests/api-with-tests.csproj",
+        "projectPath": "/home/tassio/Documentos/estudos/exercises/c#/api-test/api-with-tests/api-with-tests.csproj",
         "packagesPath": "/home/tassio/.nuget/packages/",
-        "outputPath": "/home/tassio/Documentos/estudos/exercises/c#/api-with-tests/obj/",
+        "outputPath": "/home/tassio/Documentos/estudos/exercises/c#/api-test/api-with-tests/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/tassio/.nuget/NuGet/NuGet.Config"

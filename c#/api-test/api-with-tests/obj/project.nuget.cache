@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hRuEKJZQGbJw9cD2IDykCGUkkzJ8DDysVjUYP6jdOVxD3DhYFwfdJ7slGM/TeXRBrZvCwUtmlD2cg5BYOuvjDA==",
+  "dgSpecHash": "HEVWIXtBwP1OSB6PARJ9iU3jQHdM7+CqiNS1Fob+VGCSgJH52Z2n+wAuvmHHcYKXiT6kNtjvaVsvKLXxHau0fQ==",
   "success": true,
-  "projectFilePath": "/home/tassio/Documentos/estudos/exercises/c#/api-with-tests/api-with-tests.csproj",
+  "projectFilePath": "/home/tassio/Documentos/estudos/exercises/c#/api-test/api-with-tests/api-with-tests.csproj",
   "expectedPackageFiles": [
     "/home/tassio/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "/home/tassio/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
