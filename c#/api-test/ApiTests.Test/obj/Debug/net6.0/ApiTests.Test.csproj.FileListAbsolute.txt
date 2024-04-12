@@ -1,7 +1,0 @@
-/home/tassio/Documentos/estudos/exercises/c#/api-test/ApiTests.Test/bin/Debug/net6.0/CoverletSourceRootsMapping
-/home/tassio/Documentos/estudos/exercises/c#/api-test/ApiTests.Test/obj/Debug/net6.0/ApiTests.Test.csproj.AssemblyReference.cache
-/home/tassio/Documentos/estudos/exercises/c#/api-test/ApiTests.Test/obj/Debug/net6.0/MvcTestingAppManifest.json
-/home/tassio/Documentos/estudos/exercises/c#/api-test/ApiTests.Test/obj/Debug/net6.0/ApiTests.Test.GeneratedMSBuildEditorConfig.editorconfig
-/home/tassio/Documentos/estudos/exercises/c#/api-test/ApiTests.Test/obj/Debug/net6.0/ApiTests.Test.AssemblyInfoInputs.cache
-/home/tassio/Documentos/estudos/exercises/c#/api-test/ApiTests.Test/obj/Debug/net6.0/ApiTests.Test.AssemblyInfo.cs
-/home/tassio/Documentos/estudos/exercises/c#/api-test/ApiTests.Test/obj/Debug/net6.0/ApiTests.Test.csproj.CoreCompileInputs.cache
